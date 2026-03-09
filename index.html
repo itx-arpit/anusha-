@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Something I Made</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+
+<div id="progressBar"></div>
+<div id="forName">For Anusha…</div>
+
+
+<!-- SCREEN 1 -->
+
+<div class="screen active" id="screen1">
+
+<h1 id="nameReveal">Hi Anusha 👋</h1>
+
+<p id="intro"></p>
+
+<button onclick="nextScreen(2)">Start</button>
+
+</div>
+
+
+<!-- SCREEN 2 -->
+
+<div class="screen" id="screen2">
+
+<h2>Before you continue...</h2>
+
+<p>Do you believe someone can like you but never say it?</p>
+
+<button onclick="sendAnswer()">Maybe</button>
+<button onclick="sendAnswer()">Yes</button>
+
+</div>
+
+
+<!-- SCREEN 3 -->
+
+<div class="screen" id="screen3">
+
+<p id="story"></p>
+
+<button onclick="nextScreen(4)">Next</button>
+
+</div>
+
+
+<!-- SCREEN 4 DIARY -->
+
+<div class="screen" id="screen4">
+
+<div class="book-wrapper">
+
+<div id="book">
+
+<div class="page">
+<p>
+Sometimes I sit quietly and think about how small moments
+can become something very meaningful. There were days when
+everything felt normal, but then one small moment changed
+how I started noticing things.
+</p>
+</div>
+
+<div class="page">
+<p>
+There were many times when I wanted to say something but
+stayed silent. Not because I didn't want to speak,
+but because I didn't know if it was the right moment.
+</p>
+</div>
+
+<div class="page">
+<p>
+Life moves fast and people forget many details,
+but some moments stay with us for a long time.
+Sometimes a simple conversation can stay in someone's
+thoughts longer than expected.
+</p>
+</div>
+
+<div class="page">
+<p>
+There was a moment when I realised something
+had slowly started changing inside me.
+I began noticing when you were around,
+and those moments felt different.
+</p>
+</div>
+
+<div class="page">
+<p>
+I wondered whether I should say anything
+about these thoughts or not.
+Sometimes the hardest thing is deciding
+whether to stay silent or speak honestly.
+</p>
+</div>
+
+<div class="page">
+<p>
+But ignoring feelings doesn't make them disappear.
+They simply stay somewhere quietly waiting
+to be understood.
+</p>
+</div>
+
+<div class="page">
+<p>
+So I decided it is better to say things honestly once
+instead of always wondering what could have happened
+if I never said anything.
+</p>
+</div>
+
+<div class="page">
+<p>
+That's why I made this small thing for you.
+Just so you could read it once.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<p id="turnHint">👉 Tap page corner to flip</p>
+
+<button onclick="nextScreen(5)">Continue</button>
+
+</div>
+
+
+<!-- SCREEN 5 SONG -->
+
+<div class="screen" id="screen5">
+
+<p id="songText"></p>
+
+<button onclick="playSong()">🎧 Play Song</button>
+
+<audio id="song">
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="nextScreen(6)">Continue</button>
+
+</div>
+
+
+<!-- SCREEN 6 CONFESSION -->
+
+<div class="screen" id="screen6">
+
+<p id="confession"></p>
+
+<button onclick="nextScreen(7)">Next</button>
+
+</div>
+
+
+<!-- SCREEN 7 FRIEND OPTION -->
+
+<div class="screen" id="screen7">
+
+<p id="friends"></p>
+
+<button onclick="nextScreen(8)">Continue</button>
+
+</div>
+
+
+<!-- SCREEN 8 CHOICE -->
+
+<div class="screen" id="screen8">
+
+<h2>Whatever your answer is</h2>
+
+<button onclick="finalChoice('love')">
+❤️ Maybe we can know each other more
+</button>
+
+<button onclick="finalChoice('friend')">
+🙂 Let's stay friends
+</button>
+
+</div>
+
+
+<!-- FINAL SCREEN -->
+
+<div class="screen" id="finalScreen">
+
+<h1 id="finalMessage"></h1>
+
+</div>
+
+
+<audio id="pageFlipSound">
+<source src="page-flip.mp3" type="audio/mpeg">
+</audio>
+
+<canvas id="heartsCanvas"></canvas>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
