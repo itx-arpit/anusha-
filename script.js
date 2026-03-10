@@ -1,4 +1,3 @@
-
 let currentScreen = 1
 let bookInitialized = false
 
@@ -25,8 +24,6 @@ updateProgress(n)
 if(navigator.vibrate){
 navigator.vibrate(40)
 }
-
-/* initialize diary when screen4 opens */
 
 if(n===4){
 setTimeout(initBook,300)
@@ -62,15 +59,11 @@ function typing(){
 if(i<text.length){
 
 element.innerHTML=text.substring(0,i+1)+'<span class="cursor"></span>'
-
 i++
-
 setTimeout(typing,speed)
 
 }else{
-
 element.innerHTML=text
-
 }
 
 }
@@ -193,9 +186,12 @@ if(bookInitialized) return
 
 if($("#book").length){
 
+let width = window.innerWidth * 0.9
+let height = window.innerHeight * 0.65
+
 $("#book").turn({
-width:360,
-height:260,
+width:width,
+height:height,
 autoCenter:true
 })
 
@@ -232,8 +228,6 @@ requestAnimationFrame(drawStars)
 /* PAGE LOAD */
 
 window.onload=function(){
-
-/* typing text */
 
 typeWriter(
 document.getElementById("intro"),
@@ -284,11 +278,9 @@ starCanvas.height=window.innerHeight
 for(let i=0;i<120;i++){
 
 stars.push({
-
 x:Math.random()*starCanvas.width,
 y:Math.random()*starCanvas.height,
 size:Math.random()*2
-
 })
 
 }
@@ -297,4 +289,4 @@ drawStars()
 
 }
 
-}
+  }
