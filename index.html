@@ -67,6 +67,8 @@
 
 <div class="book-wrapper">
 
+<div class="arrow left" onclick="flipPrev()">❮</div>
+
 <div id="book">
 
 <div class="page">
@@ -138,9 +140,11 @@ Just so you could read it once.
 
 </div>
 
+<div class="arrow right" onclick="flipNext()">❯</div>
+
 </div>
 
-<p id="turnHint">👉 Tap page corner to flip</p>
+<p id="turnHint">Swipe or use arrows ➡️</p>
 
 <button onclick="nextScreen(5)">Continue</button>
 
@@ -217,7 +221,6 @@ Just so you could read it once.
 </audio>
 
 <canvas id="heartsCanvas"></canvas>
-
 
 <script src="script.js"></script>
 
