@@ -7,7 +7,7 @@ text-align:center;
 overflow:hidden;
 }
 
-/* stars background */
+/* ⭐ STARS BACKGROUND */
 
 #stars{
 position:fixed;
@@ -18,7 +18,7 @@ height:100%;
 z-index:-1;
 }
 
-/* hearts canvas */
+/* ❤️ HEART CANVAS */
 
 #heartsCanvas{
 position:fixed;
@@ -30,7 +30,7 @@ pointer-events:none;
 z-index:2;
 }
 
-/* screens */
+/* SCREENS */
 
 .screen{
 display:none;
@@ -50,7 +50,7 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* buttons */
+/* BUTTONS */
 
 button{
 margin-top:20px;
@@ -75,80 +75,39 @@ button:hover{
 transform:scale(1.05);
 }
 
-/* book wrapper */
+/* 📖 BOOK WRAPPER */
 
 .book-wrapper{
+position:relative;
 display:flex;
 justify-content:center;
-perspective:2000px;
-margin-top:30px;
+align-items:center;
+margin-top:20px;
 }
 
-/* BOOK (wooden cover) */
+/* 📖 BOOK */
 
 #book{
-
-position:relative;
-
-width:90vw;
-height:60vh;
-
-margin:auto;
-
-background:linear-gradient(
-145deg,
-#5a3a1a,
-#3d250f
-);
-
-border-radius:12px;
-
-box-shadow:
-0 40px 90px rgba(0,0,0,.8),
-inset 0 0 25px rgba(0,0,0,.6);
-
-padding:10px;
-
+width:92vw;
+height:65vh;
 }
 
-/* BOOK SPINE */
-
-#book:before{
-
-content:"";
-
-position:absolute;
-
-left:50%;
-
-top:0;
-
-height:100%;
-width:6px;
-
-background:#2a1a08;
-
-box-shadow:
-inset 0 0 10px rgba(0,0,0,.9);
-
-}
-
-/* diary page */
+/* ❤️ ROMANTIC PAGE */
 
 .page{
 
-width:45vw;
-height:60vh;
+width:90vw;
+height:65vh;
 
-background:#f4ecd8;
+background:#fff;
 
-color:#222;
+color:#333;
 
-padding:24px;
+padding:30px;
 
-line-height:1.7;
+line-height:1.8;
 
-font-size:16px;
+font-size:18px;
 
 display:flex;
 align-items:center;
@@ -156,38 +115,30 @@ justify-content:center;
 
 text-align:center;
 
-border-radius:6px;
+border-radius:12px;
 
 box-shadow:
-0 15px 35px rgba(0,0,0,.5),
-inset 0 0 15px rgba(0,0,0,.1);
+0 25px 60px rgba(0,0,0,.5);
 
-/* paper texture */
+/* romantic pattern */
 
 background-image:
 
-linear-gradient(
-rgba(255,255,255,.4),
-rgba(0,0,0,.06)
-),
+radial-gradient(circle at 20% 20%, rgba(255,0,90,.15), transparent 40%),
 
-repeating-linear-gradient(
-0deg,
-rgba(0,0,0,.03),
-rgba(0,0,0,.03) 2px,
-transparent 2px,
-transparent 4px
-);
+radial-gradient(circle at 80% 70%, rgba(255,120,160,.15), transparent 40%),
+
+linear-gradient(#fff,#fff7fa);
 
 }
 
-/* page text */
+/* PAGE TEXT */
 
 .page p{
 max-width:85%;
 }
 
-/* page corner */
+/* PAGE CORNER */
 
 .page:after{
 
@@ -198,24 +149,57 @@ position:absolute;
 right:0;
 bottom:0;
 
-width:25px;
-height:25px;
+width:30px;
+height:30px;
 
-background:linear-gradient(
-135deg,
-#ddd,
-#fff
-);
+background:linear-gradient(135deg,#eee,#fff);
 
-clip-path:polygon(
-0 100%,
-100% 0,
-100% 100%
-);
+clip-path:polygon(0 100%,100% 0,100% 100%);
 
 }
 
-/* progress bar */
+/* ➡️⬅️ ARROWS */
+
+.arrow{
+
+position:absolute;
+
+top:50%;
+
+transform:translateY(-50%);
+
+font-size:32px;
+
+color:white;
+
+background:rgba(0,0,0,.45);
+
+padding:10px 14px;
+
+border-radius:50%;
+
+cursor:pointer;
+
+z-index:5;
+
+transition:.25s;
+
+}
+
+.arrow.left{
+left:10px;
+}
+
+.arrow.right{
+right:10px;
+}
+
+.arrow:hover{
+background:#ff4d6d;
+transform:translateY(-50%) scale(1.15);
+}
+
+/* 📊 PROGRESS BAR */
 
 #progressBar{
 
@@ -234,7 +218,7 @@ z-index:10;
 
 }
 
-/* typing cursor */
+/* ⌨️ TYPING CURSOR */
 
 .cursor{
 
@@ -258,7 +242,7 @@ animation:blink 1s infinite;
 
 }
 
-/* floating name */
+/* 💌 FLOATING NAME */
 
 #forName{
 
@@ -277,7 +261,7 @@ text-shadow:0 0 10px #ff4d6d;
 
 }
 
-/* page hint */
+/* PAGE HINT */
 
 #turnHint{
 
@@ -289,4 +273,4 @@ color:#ff4d6d;
 
 opacity:.8;
 
-}
+  }
