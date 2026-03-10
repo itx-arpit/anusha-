@@ -121,6 +121,7 @@ text-align:center;
 border-radius:12px;
 
 box-shadow:0 25px 60px rgba(0,0,0,.5);
+  backdrop-filter: blur(6px);
 
 background-image:
 radial-gradient(circle at 20% 20%,rgba(255,0,90,.15),transparent 40%),
@@ -135,7 +136,14 @@ position:relative;
 
 .page p{
 width:100%;
-max-width:100%;
+margin:auto;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
 }
 
 /* PAGE CORNER */
@@ -228,3 +236,4 @@ font-size:14px;
 color:#ff4d6d;
 opacity:.8;
 }
+
