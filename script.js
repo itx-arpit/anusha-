@@ -5,8 +5,6 @@ let bookInitialized = false
 
 function nextScreen(n){
 
-playFlip()
-
 document.querySelectorAll(".screen").forEach(s=>{
 s.classList.remove("active")
 })
@@ -103,6 +101,16 @@ sound.play()
 
 }
 
+/* ARROW CONTROLS */
+
+function flipNext(){
+$("#book").turn("next")
+}
+
+function flipPrev(){
+$("#book").turn("previous")
+}
+
 /* FINAL CHOICE */
 
 function finalChoice(choice){
@@ -186,13 +194,14 @@ if(bookInitialized) return
 
 if($("#book").length){
 
-let width = window.innerWidth * 0.9
+let width = window.innerWidth * 0.92
 let height = window.innerHeight * 0.65
 
 $("#book").turn({
 width:width,
 height:height,
-autoCenter:true
+autoCenter:true,
+display:"single"
 })
 
 $("#book").bind("turned",function(){
