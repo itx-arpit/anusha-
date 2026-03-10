@@ -9,13 +9,13 @@ document.querySelectorAll(".screen").forEach(s=>{
 s.classList.remove("active")
 })
 
-let target=document.getElementById("screen"+n)
+let target = document.getElementById("screen"+n)
 
 if(target){
 target.classList.add("active")
 }
 
-currentScreen=n
+currentScreen = n
 
 updateProgress(n)
 
@@ -23,7 +23,7 @@ if(navigator.vibrate){
 navigator.vibrate(40)
 }
 
-if(n===4){
+if(n === 4){
 setTimeout(initBook,300)
 }
 
@@ -33,13 +33,13 @@ setTimeout(initBook,300)
 
 function updateProgress(screen){
 
-let total=8
-let percent=(screen/total)*100
+let total = 8
+let percent = (screen/total)*100
 
-let bar=document.getElementById("progressBar")
+let bar = document.getElementById("progressBar")
 
 if(bar){
-bar.style.width=percent+"%"
+bar.style.width = percent+"%"
 }
 
 }
@@ -50,18 +50,20 @@ function typeWriter(element,text,speed=50){
 
 if(!element) return
 
-let i=0
+let i = 0
 
 function typing(){
 
-if(i<text.length){
+if(i < text.length){
 
-element.innerHTML=text.substring(0,i+1)+'<span class="cursor"></span>'
+element.innerHTML = text.substring(0,i+1) + '<span class="cursor"></span>'
 i++
 setTimeout(typing,speed)
 
 }else{
-element.innerHTML=text
+
+element.innerHTML = text
+
 }
 
 }
@@ -80,7 +82,7 @@ nextScreen(3)
 
 function playSong(){
 
-let song=document.getElementById("song")
+let song = document.getElementById("song")
 
 if(song){
 song.play()
@@ -92,10 +94,10 @@ song.play()
 
 function playFlip(){
 
-let sound=document.getElementById("pageFlipSound")
+let sound = document.getElementById("pageFlipSound")
 
 if(sound){
-sound.currentTime=0
+sound.currentTime = 0
 sound.play()
 }
 
@@ -119,11 +121,11 @@ burstHearts()
 
 setTimeout(()=>{
 
-document.querySelectorAll(".screen")
-.forEach(s=>s.classList.remove("active"))
+document.querySelectorAll(".screen").forEach(s=>{
+s.classList.remove("active")
+})
 
-document.getElementById("finalScreen")
-.classList.add("active")
+document.getElementById("finalScreen").classList.add("active")
 
 let msg = choice==="love"
 ? "You just made my day ❤️"
@@ -171,8 +173,8 @@ ctx.clearRect(0,0,canvas.width,canvas.height)
 
 hearts.forEach(h=>{
 
-h.x+=h.vx
-h.y+=h.vy
+h.x += h.vx
+h.y += h.vy
 
 ctx.fillStyle="pink"
 
@@ -194,8 +196,8 @@ if(bookInitialized) return
 
 if($("#book").length){
 
-let width = window.innerWidth * 0.95
-let height = window.innerHeight * 0.80
+let width = window.innerWidth * 0.92
+let height = window.innerHeight * 0.75
 
 $("#book").turn({
 width:width,
@@ -210,11 +212,11 @@ $("#book").bind("turned",function(e,page){
 
 playFlip()
 
-let totalPages=$("#book").turn("pages")
+let totalPages = $("#book").turn("pages")
 
-if(page===totalPages){
+if(page === totalPages){
 
-let btn=document.getElementById("continueBtn")
+let btn = document.getElementById("continueBtn")
 
 if(btn){
 btn.style.display="block"
@@ -224,7 +226,7 @@ btn.style.display="block"
 
 })
 
-bookInitialized=true
+bookInitialized = true
 
 }
 
@@ -281,24 +283,24 @@ document.getElementById("friends"),
 
 /* hearts canvas */
 
-canvas=document.getElementById("heartsCanvas")
+canvas = document.getElementById("heartsCanvas")
 
 if(canvas){
-ctx=canvas.getContext("2d")
-canvas.width=window.innerWidth
-canvas.height=window.innerHeight
+ctx = canvas.getContext("2d")
+canvas.width = window.innerWidth
+canvas.height = window.innerHeight
 }
 
 /* stars canvas */
 
-starCanvas=document.getElementById("stars")
+starCanvas = document.getElementById("stars")
 
 if(starCanvas){
 
-starCtx=starCanvas.getContext("2d")
+starCtx = starCanvas.getContext("2d")
 
-starCanvas.width=window.innerWidth
-starCanvas.height=window.innerHeight
+starCanvas.width = window.innerWidth
+starCanvas.height = window.innerHeight
 
 for(let i=0;i<120;i++){
 
