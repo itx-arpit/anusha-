@@ -30,27 +30,38 @@ pointer-events:none;
 z-index:2;
 }
 
-/* SCREENS */
+/* 📱 SCREENS */
 
 .screen{
+
 display:none;
+
 max-width:95%;
 margin:auto;
-padding:20px;
+
 min-height:100vh;
+
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:20px;
 
 opacity:0;
 transform:translateY(40px);
 transition:.6s;
+
 }
 
 .active{
-display:block;
+display:flex;
 opacity:1;
 transform:translateY(0);
 }
 
-/* BUTTONS */
+/* 🔘 BUTTONS */
 
 button{
 margin-top:20px;
@@ -120,25 +131,23 @@ border-radius:12px;
 box-shadow:
 0 25px 60px rgba(0,0,0,.5);
 
-/* romantic pattern */
+/* romantic design */
 
 background-image:
 
 radial-gradient(circle at 20% 20%, rgba(255,0,90,.15), transparent 40%),
-
 radial-gradient(circle at 80% 70%, rgba(255,120,160,.15), transparent 40%),
-
 linear-gradient(#fff,#fff7fa);
 
 }
 
-/* PAGE TEXT */
+/* page text */
 
 .page p{
 max-width:85%;
 }
 
-/* PAGE CORNER */
+/* page corner */
 
 .page:after{
 
@@ -158,7 +167,7 @@ clip-path:polygon(0 100%,100% 0,100% 100%);
 
 }
 
-/* ➡️⬅️ ARROWS */
+/* ⬅️➡️ ARROWS */
 
 .arrow{
 
@@ -273,4 +282,4 @@ color:#ff4d6d;
 
 opacity:.8;
 
-  }
+}
