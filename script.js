@@ -194,8 +194,8 @@ if(bookInitialized) return
 
 if($("#book").length){
 
-let width = window.innerWidth * 0.92
-let height = window.innerHeight * 0.65
+let width = window.innerWidth * 0.95
+let height = window.innerHeight * 0.80
 
 $("#book").turn({
 width:width,
@@ -204,8 +204,24 @@ autoCenter:true,
 display:"single"
 })
 
-$("#book").bind("turned",function(){
+/* PAGE TURN EVENT */
+
+$("#book").bind("turned",function(e,page){
+
 playFlip()
+
+let totalPages=$("#book").turn("pages")
+
+if(page===totalPages){
+
+let btn=document.getElementById("continueBtn")
+
+if(btn){
+btn.style.display="block"
+}
+
+}
+
 })
 
 bookInitialized=true
@@ -298,4 +314,4 @@ drawStars()
 
 }
 
-  }
+}
