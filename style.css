@@ -7,6 +7,8 @@ text-align:center;
 overflow:hidden;
 }
 
+/* stars background */
+
 #stars{
 position:fixed;
 top:0;
@@ -15,6 +17,8 @@ width:100%;
 height:100%;
 z-index:-1;
 }
+
+/* hearts canvas */
 
 #heartsCanvas{
 position:fixed;
@@ -26,12 +30,15 @@ pointer-events:none;
 z-index:2;
 }
 
+/* screens */
+
 .screen{
 display:none;
-max-width:420px;
+max-width:95%;
 margin:auto;
-padding:30px;
+padding:20px;
 min-height:100vh;
+
 opacity:0;
 transform:translateY(40px);
 transition:.6s;
@@ -43,52 +50,243 @@ opacity:1;
 transform:translateY(0);
 }
 
+/* buttons */
+
 button{
 margin-top:20px;
-padding:12px 26px;
+padding:14px 28px;
+
 border-radius:14px;
 border:none;
+
 background:linear-gradient(45deg,#ff4d6d,#ff2c54);
+
 color:white;
 font-size:16px;
+
 cursor:pointer;
+
+box-shadow:0 8px 20px rgba(0,0,0,.4);
+
+transition:.25s;
 }
+
+button:hover{
+transform:scale(1.05);
+}
+
+/* book wrapper */
 
 .book-wrapper{
 display:flex;
 justify-content:center;
 perspective:2000px;
-margin-top:40px;
+margin-top:30px;
 }
+
+/* BOOK (wooden cover) */
 
 #book{
-width:360px;
-height:260px;
+
+position:relative;
+
+width:90vw;
+height:60vh;
+
 margin:auto;
+
+background:linear-gradient(
+145deg,
+#5a3a1a,
+#3d250f
+);
+
+border-radius:12px;
+
+box-shadow:
+0 40px 90px rgba(0,0,0,.8),
+inset 0 0 25px rgba(0,0,0,.6);
+
+padding:10px;
+
 }
+
+/* BOOK SPINE */
+
+#book:before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:0;
+
+height:100%;
+width:6px;
+
+background:#2a1a08;
+
+box-shadow:
+inset 0 0 10px rgba(0,0,0,.9);
+
+}
+
+/* diary page */
 
 .page{
-background:#efe6d3;
+
+width:45vw;
+height:60vh;
+
+background:#f4ecd8;
+
 color:#222;
-padding:26px;
-line-height:1.75;
-font-size:15px;
+
+padding:24px;
+
+line-height:1.7;
+
+font-size:16px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
 border-radius:6px;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.5),
+inset 0 0 15px rgba(0,0,0,.1);
+
+/* paper texture */
+
+background-image:
+
+linear-gradient(
+rgba(255,255,255,.4),
+rgba(0,0,0,.06)
+),
+
+repeating-linear-gradient(
+0deg,
+rgba(0,0,0,.03),
+rgba(0,0,0,.03) 2px,
+transparent 2px,
+transparent 4px
+);
+
 }
+
+/* page text */
+
+.page p{
+max-width:85%;
+}
+
+/* page corner */
+
+.page:after{
+
+content:"";
+
+position:absolute;
+
+right:0;
+bottom:0;
+
+width:25px;
+height:25px;
+
+background:linear-gradient(
+135deg,
+#ddd,
+#fff
+);
+
+clip-path:polygon(
+0 100%,
+100% 0,
+100% 100%
+);
+
+}
+
+/* progress bar */
 
 #progressBar{
+
 position:fixed;
+
 top:0;
 left:0;
+
 height:4px;
+
 background:#ff4d6d;
+
 width:0%;
+
+z-index:10;
+
 }
 
+/* typing cursor */
+
+.cursor{
+
+display:inline-block;
+
+width:2px;
+
+background:white;
+
+margin-left:3px;
+
+animation:blink 1s infinite;
+
+}
+
+@keyframes blink{
+
+0%{opacity:1}
+50%{opacity:0}
+100%{opacity:1}
+
+}
+
+/* floating name */
+
 #forName{
+
 position:fixed;
+
 bottom:20px;
 right:20px;
+
+font-size:16px;
+
 color:#ff4d6d;
+
 opacity:.3;
+
+text-shadow:0 0 10px #ff4d6d;
+
+}
+
+/* page hint */
+
+#turnHint{
+
+margin-top:10px;
+
+font-size:14px;
+
+color:#ff4d6d;
+
+opacity:.8;
+
 }
